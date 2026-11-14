@@ -52,8 +52,26 @@ jobs:
       - name: Publish to Visual Studio Marketplace (OIDC)
         shell: pwsh
         run: |
+          $oidcUri = "$($env:ACTIONS_ID_TOKEN_REQUEST_URL)&audience=https://marketplace.visualstudio.com"
+          $oidc = Invoke-RestMethod -Uri $oidcUri -Headers @{ Authorization = "Bearer $($env:ACTIONS_ID_TOKEN_REQUEST_TOKEN)" }
+          $exchange = Invoke-RestMethod -Method Post `
+            -Uri "https://marketplace.visualstudio.com/_apis/gallery/token?api-version=7.2-preview.1" `
+            -Headers @{
+              Authorization = "FederatedToken $($oidc.value)"
+              Accept = "application/json"
+              "X-Market-CI-Provider" = "github-actions"
+            } `
+            -ContentType "application/json" `
+            -Body (@{ publisherName = "mnml" } | ConvertTo-Json)
+
+          $token = $exchange.credential
+          if (-not $token) {
+            throw "Failed to obtain Marketplace session token from OIDC exchange."
+          }
+          Write-Host "::add-mask::$token"
+
           $publisher = Get-Item "$env:USERPROFILE\.nuget\packages\microsoft.vssdk.buildtools\*\tools\VSSDK\bin\VsixPublisher.exe" | Select-Object -First 1 -ExpandProperty FullName
           & $publisher publish `
             -payload "TotalBlack\bin\Release\TotalBlack.vsix" `
             -publishManifest "publishManifest.json" `
-            -oidc
+            -personalAccessToken $token
