@@ -1751,10 +1751,16 @@
       <Color Name="VizSurfaceStrongBlue">
         <Background Type="CT_RAW" Source="FF000000" />
       </Color>
+      <Color Name="TreeContentSelectedHyperlink">
+        <Background Type="CT_RAW" Source="FF00BBFF" />
+      </Color>
+      <Color Name="TreeContentSelectedHyperlinkHover">
+        <Background Type="CT_RAW" Source="FF55AAFF" />
+      </Color>
     </Category>
     <Category Name="Editor Tooltip" GUID="{a9a5637f-b2a8-422e-8fb5-dfb4625f0111}">
       <Color Name="Plain Text">
-        <Background Type="CT_INVALID" Source="00000000" />
+        <Background Type="CT_RAW" Source="FF000000" />
         <Foreground Type="CT_RAW" Source="FFC8C8C8" />
       </Color>
     </Category>
@@ -2323,7 +2329,7 @@
         <Background Type="CT_RAW" Source="FF000000" />
       </Color>
       <Color Name="CommandBarTextMouseDown">
-        <Background Type="CT_RAW" Source="FF6B6B6B" />
+        <Background Type="CT_RAW" Source="FFFFFFFF" />
       </Color>
       <Color Name="FileTabIndicatorTextSelectedInactive">
         <Background Type="CT_RAW" Source="FFFFFFFF" />
@@ -2639,7 +2645,7 @@
         <Background Type="CT_RAW" Source="FF333333" />
       </Color>
       <Color Name="CommandBarSplitButtonSeparator">
-        <Background Type="CT_RAW" Source="FF666666" />
+        <Background Type="CT_RAW" Source="FF1C1C1C" />
       </Color>
       <Color Name="DropDownBorder">
         <Background Type="CT_RAW" Source="FF222222" />
@@ -2847,7 +2853,7 @@
         <Background Type="CT_RAW" Source="FFD6D6D6" />
       </Color>
       <Color Name="CommandBarTextHover">
-        <Background Type="CT_RAW" Source="FF6B6B6B" />
+        <Background Type="CT_RAW" Source="FFFFFFFF" />
       </Color>
       <Color Name="CommandBarTextHoverOverSelected">
         <Background Type="CT_RAW" Source="FFFFFFFF" />
@@ -2976,10 +2982,10 @@
         <Background Type="CT_RAW" Source="FF000000" />
       </Color>
       <Color Name="ComboBoxMouseDownBorder">
-        <Background Type="CT_RAW" Source="FF707070" />
+        <Background Type="CT_RAW" Source="FF333333" />
       </Color>
       <Color Name="ComboBoxMouseDownGlyph">
-        <Background Type="CT_RAW" Source="FF9D9D9D" />
+        <Background Type="CT_RAW" Source="FFFFFFFF" />
       </Color>
       <Color Name="StatusBarHighlight">
         <Background Type="CT_RAW" Source="FF000000" />
@@ -3029,7 +3035,7 @@
         <Background Type="CT_RAW" Source="FF222222" />
       </Color>
       <Color Name="CommandBarBorder">
-        <Background Type="CT_RAW" Source="FF707070" />
+        <Background Type="CT_RAW" Source="FF222222" />
       </Color>
       <Color Name="CommandBarHoverOverSelectedIconBorder">
         <Background Type="CT_RAW" Source="FF222222" />
@@ -3559,7 +3565,7 @@
         <Background Type="CT_RAW" Source="FF000000" />
       </Color>
       <Color Name="HelpSearchFrameText">
-        <Background Type="CT_RAW" Source="FF000000" />
+        <Background Type="CT_RAW" Source="FFFAFAFA" />
       </Color>
       <Color Name="HelpSearchPanelRules">
         <Background Type="CT_RAW" Source="FF222222" />
@@ -3998,7 +4004,7 @@
         <Background Type="CT_RAW" Source="FFDCDCDC" />
       </Color>
       <Color Name="ToolWindowCodeBlockBackground">
-        <Background Type="CT_RAW" Source="FF525252" />
+        <Background Type="CT_RAW" Source="FF141414" />
       </Color>
       <Color Name="ToolWindowButtonDownBorder">
         <Background Type="CT_RAW" Source="00000000" />
@@ -5181,7 +5187,7 @@
         <Background Type="CT_RAW" Source="FF222222" />
       </Color>
     </Category>
-    <Category Name="Android Layout Editor Colors" GUID="{75a05685-00a8-4ded-bae5-e7a50bfa929a}">
+    <Category Name="Text Editor MEF Items" GUID="{75a05685-00a8-4ded-bae5-e7a50bfa929a}">
       <Color Name="xml doc comment - delimiter">
         <Background Type="CT_RAW" Source="FF000000" />
         <Foreground Type="CT_RAW" Source="FF6A9955" />
@@ -5569,7 +5575,7 @@
         <Foreground Type="CT_RAW" Source="FF4EC9B0" />
       </Color>
       <Color Name="inline hints">
-        <Background Type="CT_RAW" Source="FF000000" />
+        <Background Type="CT_RAW" Source="FF141414" />
         <Foreground Type="CT_RAW" Source="FFA9A8A7" />
       </Color>
       <Color Name="inline diagnostics - syntax error">
@@ -6761,6 +6767,18 @@
       <Color Name="Expression Hover Highlight">
         <Background Type="CT_RAW" Source="FF222222" />
         <Foreground Type="CT_RAW" Source="FF010000" />
+      </Color>
+      <Color Name="roslyn test code">
+        <Background Type="CT_RAW" Source="FF0A0A0A" />
+      </Color>
+      <Color Name="roslyn test code markdown">
+        <Foreground Type="CT_RAW" Source="FFFF01C1" />
+      </Color>
+      <Color Name="Knockout Region">
+        <Background Type="CT_RAW" Source="FF0A0A0A" />
+      </Color>
+      <Color Name="ScssKeywordFormat">
+        <Foreground Type="CT_RAW" Source="FFD69C56" />
       </Color>
     </Category>
     <Category Name="SearchControl" GUID="{f1095fad-881f-45f1-8580-589e10325eb8}">
@@ -10671,6 +10689,119 @@
       </Color>
       <Color Name="NeutralSeptenary">
         <Background Type="CT_RAW" Source="85FFFFFF" />
+      </Color>
+    </Category>
+    <Category Name="EditorOverride" GUID="{656339d7-0e39-43e2-98aa-becc3f87ffa5}">
+      <Color Name="PopupBackground">
+        <Background Type="CT_RAW" Source="FF000000" />
+      </Color>
+      <Color Name="PopupBorder">
+        <Background Type="CT_RAW" Source="FF222222" />
+      </Color>
+      <Color Name="PopupHyperlink">
+        <Background Type="CT_RAW" Source="FF99EBFF" />
+      </Color>
+      <Color Name="PopupSelectedBackground">
+        <Background Type="CT_RAW" Source="FF1C1C1C" />
+      </Color>
+      <Color Name="PopupSelectedText">
+        <Background Type="CT_RAW" Source="FFFFFFFF" />
+      </Color>
+      <Color Name="PopupShadow">
+        <Background Type="CT_RAW" Source="42000000" />
+      </Color>
+      <Color Name="PopupSubtleText">
+        <Background Type="CT_RAW" Source="C8FFFFFF" />
+      </Color>
+      <Color Name="PopupText">
+        <Background Type="CT_RAW" Source="FFFFFFFF" />
+      </Color>
+    </Category>
+    <Category Name="CommonDocumentCard" GUID="{2e129498-0d2d-43ca-94d6-c652c0132543}">
+      <Color Name="CardText">
+        <Background Type="CT_RAW" Source="FFF1F1F1" />
+      </Color>
+      <Color Name="CardHeaderText">
+        <Background Type="CT_RAW" Source="FFF1F1F1" />
+      </Color>
+      <Color Name="CardHyperlinkHover">
+        <Background Type="CT_RAW" Source="FF55AAFF" />
+      </Color>
+      <Color Name="CardShadow1Hover">
+        <Background Type="CT_RAW" Source="2D000000" />
+      </Color>
+      <Color Name="CardPanel">
+        <Background Type="CT_RAW" Source="FF000000" />
+      </Color>
+      <Color Name="CardTagText">
+        <Background Type="CT_RAW" Source="FFFFFFFF" />
+      </Color>
+      <Color Name="CardTag">
+        <Background Type="CT_RAW" Source="FF141414" />
+      </Color>
+      <Color Name="CardShadow1">
+        <Background Type="CT_RAW" Source="1E000000" />
+      </Color>
+      <Color Name="Accent01">
+        <Background Type="CT_RAW" Source="FFA79CF1" />
+      </Color>
+      <Color Name="Accent02">
+        <Background Type="CT_RAW" Source="E5A79CF1" />
+      </Color>
+      <Color Name="Accent03">
+        <Background Type="CT_RAW" Source="CCA79CF1" />
+      </Color>
+      <Color Name="Accent04">
+        <Background Type="CT_RAW" Source="669184EE" />
+      </Color>
+      <Color Name="Neutral01">
+        <Background Type="CT_RAW" Source="99C3C3C3" />
+      </Color>
+      <Color Name="Neutral02">
+        <Background Type="CT_RAW" Source="66C3C3C3" />
+      </Color>
+      <Color Name="Neutral03">
+        <Background Type="CT_RAW" Source="33C3C3C3" />
+      </Color>
+      <Color Name="Neutral04">
+        <Background Type="CT_RAW" Source="80000000" />
+      </Color>
+      <Color Name="Neutral05">
+        <Background Type="CT_RAW" Source="FF000000" />
+      </Color>
+      <Color Name="Neutral06">
+        <Background Type="CT_RAW" Source="85FFFFFF" />
+      </Color>
+    </Category>
+    <Category Name="AI" GUID="{7730ec54-ee62-4fd2-86cc-77071aabb206}">
+      <Color Name="PrimaryHighlight">
+        <Background Type="CT_RAW" Source="FFA79CF1" />
+      </Color>
+      <Color Name="PromptSuggestionBorder">
+        <Background Type="CT_RAW" Source="5CA79CF1" />
+      </Color>
+      <Color Name="TagAdornerBackground">
+        <Background Type="CT_RAW" Source="FF101010" />
+      </Color>
+      <Color Name="TagAdornerBorder">
+        <Background Type="CT_RAW" Source="FF222222" />
+      </Color>
+      <Color Name="TagAdornerForeground">
+        <Background Type="CT_RAW" Source="FFFFFFFF" />
+      </Color>
+    </Category>
+    <Category Name="Chat" GUID="{9e237087-2ccf-49c1-8c85-974b201581e3}">
+      <Color Name="BubbleOtherBackground">
+        <Background Type="CT_RAW" Source="FF0A0A0A" />
+      </Color>
+      <Color Name="BubbleOtherBorder">
+        <Background Type="CT_RAW" Source="FF222222" />
+      </Color>
+      <Color Name="BubbleSelfBackground">
+        <Background Type="CT_RAW" Source="29A79CF1" />
+      </Color>
+      <Color Name="BubbleSelfBorder">
+        <Background Type="CT_RAW" Source="29A79CF1" />
       </Color>
     </Category>
   </Theme>
