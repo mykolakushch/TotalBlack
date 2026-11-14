@@ -21,7 +21,7 @@
         <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[17.0, )" DisplayName="Visual Studio core editor" />
     </Prerequisites>
     <Assets>
-        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
-        <Asset Type="Microsoft.VisualStudio.VsPackage" Path="ThemeFallback.pkgdef" />
+        <Asset Type="Microsoft.VisualStudio.VsPackage" Path="CustomTheme.pkgdef" />
+        <Asset Type="Microsoft.VisualStudio.Theme" Path="CustomTheme.vstheme" />
     </Assets>
 </PackageManifest>

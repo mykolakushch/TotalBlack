@@ -60,20 +60,28 @@ jobs:
         run: |
           $token = $env:VS_PAT
           if (-not $token) {
-            $oidcUri = "$($env:ACTIONS_ID_TOKEN_REQUEST_URL)&audience=marketplace.visualstudio.com"
-            $oidc = Invoke-RestMethod -Uri $oidcUri -Headers @{ Authorization = "Bearer $($env:ACTIONS_ID_TOKEN_REQUEST_TOKEN)" }
+            Write-Host "No VS_PUBLISHER_ACCESS_TOKEN secret found. Attempting GitHub OIDC token exchange with Marketplace..."
+            try {
+              $oidcUri = "$($env:ACTIONS_ID_TOKEN_REQUEST_URL)&audience=marketplace.visualstudio.com"
+              $oidc = Invoke-RestMethod -Uri $oidcUri -Headers @{ Authorization = "Bearer $($env:ACTIONS_ID_TOKEN_REQUEST_TOKEN)" }
 
-            $exchange = Invoke-RestMethod -Method Post `
-              -Uri "https://marketplace.visualstudio.com/_apis/gallery/token?api-version=7.2-preview.1" `
-              -Headers @{
-                Authorization = "FederatedToken $($oidc.value)"
-                Accept = "application/json;api-version=7.2-preview.1"
-                "User-Agent" = "VsixPublisher/1.0"
-              } `
-              -ContentType "application/json" `
-              -Body (@{ publisherName = "mnml" } | ConvertTo-Json)
+              $exchange = Invoke-RestMethod -Method Post `
+                -Uri "https://marketplace.visualstudio.com/_apis/gallery/token?api-version=7.2-preview.1" `
+                -Headers @{
+                  Authorization = "FederatedToken $($oidc.value)"
+                  Accept = "application/json;api-version=7.2-preview.1"
+                  "User-Agent" = "VsixPublisher/1.0"
+                } `
+                -ContentType "application/json" `
+                -Body (@{ publisherName = "mnml" } | ConvertTo-Json)
 
-            $token = $exchange.credential
+              $token = $exchange.credential
+            } catch {
+              Write-Warning "Marketplace OIDC token exchange failed: $($_.Exception.Message)"
+              Write-Error "To publish automatically to the Visual Studio Marketplace:`n1) Go to GitHub Repository Settings -> Secrets and variables -> Actions`n2) Add secret 'VS_PUBLISHER_ACCESS_TOKEN' with your Visual Studio Marketplace PAT token (from dev.azure.com with Marketplace: Manage scope).`nOr configure GitHub federated OIDC credentials under the 'mnml' publisher at https://marketplace.visualstudio.com/manage"
+              throw
+            }
+
             if (-not $token) {
               throw "Failed to obtain Marketplace session token from OIDC exchange."
             }
