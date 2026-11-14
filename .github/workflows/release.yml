@@ -53,32 +53,32 @@ jobs:
           generate_release_notes: true
           files: TotalBlack/bin/Release/TotalBlack.vsix
 
-      - name: Publish to Visual Studio Marketplace (OIDC)
+      - name: Publish to Visual Studio Marketplace
         shell: pwsh
+        env:
+          VS_PAT: ${{ secrets.VS_PUBLISHER_ACCESS_TOKEN }}
         run: |
-          $oidcUri = "$($env:ACTIONS_ID_TOKEN_REQUEST_URL)&audience=marketplace.visualstudio.com"
-          $oidc = Invoke-RestMethod -Uri $oidcUri -Headers @{ Authorization = "Bearer $($env:ACTIONS_ID_TOKEN_REQUEST_TOKEN)" }
-
-          $payloadB64 = $oidc.value.Split('.')[1].Replace('-', '+').Replace('_', '/')
-          switch ($payloadB64.Length % 4) { 2 { $payloadB64 += '==' } 3 { $payloadB64 += '=' } }
-          $claims = [System.Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($payloadB64)) | ConvertFrom-Json
-          Write-Host "OIDC claims: aud=$($claims.aud) iss=$($claims.iss) sub=$($claims.sub) repo_id=$($claims.repository_id) owner_id=$($claims.repository_owner_id) job_workflow_ref=$($claims.job_workflow_ref) env=$($claims.environment)"
-
-          $exchange = Invoke-RestMethod -Method Post `
-            -Uri "https://marketplace.visualstudio.com/_apis/gallery/token?api-version=7.2-preview.1" `
-            -Headers @{
-              Authorization = "FederatedToken $($oidc.value)"
-              Accept = "application/json"
-              "X-Market-CI-Provider" = "github-actions"
-            } `
-            -ContentType "application/json" `
-            -Body (@{ publisherName = "mnml" } | ConvertTo-Json)
-
-          $token = $exchange.credential
+          $token = $env:VS_PAT
           if (-not $token) {
-            throw "Failed to obtain Marketplace session token from OIDC exchange."
+            $oidcUri = "$($env:ACTIONS_ID_TOKEN_REQUEST_URL)&audience=marketplace.visualstudio.com"
+            $oidc = Invoke-RestMethod -Uri $oidcUri -Headers @{ Authorization = "Bearer $($env:ACTIONS_ID_TOKEN_REQUEST_TOKEN)" }
+
+            $exchange = Invoke-RestMethod -Method Post `
+              -Uri "https://marketplace.visualstudio.com/_apis/gallery/token?api-version=7.2-preview.1" `
+              -Headers @{
+                Authorization = "FederatedToken $($oidc.value)"
+                Accept = "application/json;api-version=7.2-preview.1"
+                "User-Agent" = "VsixPublisher/1.0"
+              } `
+              -ContentType "application/json" `
+              -Body (@{ publisherName = "mnml" } | ConvertTo-Json)
+
+            $token = $exchange.credential
+            if (-not $token) {
+              throw "Failed to obtain Marketplace session token from OIDC exchange."
+            }
+            Write-Host "::add-mask::$token"
           }
-          Write-Host "::add-mask::$token"
 
           $publisher = Get-Item "$env:USERPROFILE\.nuget\packages\microsoft.vssdk.buildtools\*\tools\VSSDK\bin\VsixPublisher.exe" | Select-Object -First 1 -ExpandProperty FullName
           & $publisher publish `
