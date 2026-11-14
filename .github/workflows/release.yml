@@ -57,12 +57,12 @@ jobs:
           $exchange = Invoke-RestMethod -Method Post `
             -Uri "https://marketplace.visualstudio.com/_apis/gallery/token?api-version=7.2-preview.1" `
             -Headers @{
-              Authorization = "FederatedToken $($oidc.value)"
+              Authorization = "Bearer $($oidc.value)"
               Accept = "application/json"
-              "X-Market-CI-Provider" = "github-actions"
+              "User-Agent" = "VsixPublisher/1.0"
             } `
             -ContentType "application/json" `
-            -Body (@{ publisherName = "mnml" } | ConvertTo-Json)
+            -Body (@{ PublisherName = "mnml" } | ConvertTo-Json)
 
           $token = $exchange.credential
           if (-not $token) {
