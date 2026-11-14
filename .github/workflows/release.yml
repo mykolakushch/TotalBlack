@@ -13,12 +13,14 @@ permissions:
 jobs:
   release:
     runs-on: windows-latest
+    environment: release
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Set VSIX Version from Tag
+        if: startsWith(github.ref, 'refs/tags/v')
         shell: pwsh
         run: |
           $tag = "${{ github.ref_name }}"
@@ -45,6 +47,7 @@ jobs:
         run: msbuild TotalBlack.sln /t:Restore,Build /p:Configuration=Release /v:minimal
 
       - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
           generate_release_notes: true
