@@ -70,4 +70,4 @@ Releases are triggered by version tags:
    git tag v1.1.0
    git push origin v1.1.0
    ```
-3. The [Release & Publish workflow](.github/workflows/release.yml) updates `Version` in `TotalBlack/source.extension.vsixmanifest` from the tag, builds `TotalBlack.vsix`, creates a GitHub Release with generated release notes, and publishes to the Visual Studio Marketplace using `VS_PUBLISHER_ACCESS_TOKEN`.
+3. The [Release & Publish workflow](.github/workflows/release.yml) updates `Version` in `TotalBlack/source.extension.vsixmanifest` from the tag, builds `TotalBlack.vsix`, creates a GitHub Release with generated release notes, and publishes to the Visual Studio Marketplace via Trusted Publishing (OIDC).
