@@ -52,7 +52,7 @@ jobs:
       - name: Publish to Visual Studio Marketplace (OIDC)
         shell: pwsh
         run: |
-          $oidcUri = "$($env:ACTIONS_ID_TOKEN_REQUEST_URL)&audience=https://marketplace.visualstudio.com"
+          $oidcUri = "$($env:ACTIONS_ID_TOKEN_REQUEST_URL)&audience=marketplace.visualstudio.com"
           $oidc = Invoke-RestMethod -Uri $oidcUri -Headers @{ Authorization = "Bearer $($env:ACTIONS_ID_TOKEN_REQUEST_TOKEN)" }
           $exchange = Invoke-RestMethod -Method Post `
             -Uri "https://marketplace.visualstudio.com/_apis/gallery/token?api-version=7.2-preview.1" `
