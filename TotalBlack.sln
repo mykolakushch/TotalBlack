@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.5.33424.131
-MinimumVisualStudioVersion = 10.0.40219.1
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 17.0.31903.59
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TotalBlack", "TotalBlack\TotalBlack.csproj", "{C8B6D057-3F67-43BD-B28E-A883AD12AE01}"
 EndProject
 Global

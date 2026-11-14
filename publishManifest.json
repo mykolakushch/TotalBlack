@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json.schemastore.org/vsix-publish",
+  "categories": [
+    "coding"
+  ],
+  "identity": {
+    "internalName": "totalblacktheme"
+  },
+  "overview": "README.md",
+  "priceCategory": "free",
+  "publisher": "mnml",
+  "private": false,
+  "qna": true,
+  "repo": "https://github.com/mykolakushch/TotalBlack"
+}
