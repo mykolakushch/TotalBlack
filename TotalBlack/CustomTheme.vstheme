@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
 <Themes>
   <Theme Name="Total Black" GUID="{e2d37184-9a1c-4481-b6f3-e74563408652}" BaseGUID="{1ded0138-47ce-435e-84ef-9ec1f439b749}" FallbackId="{1ded0138-47ce-435e-84ef-9ec1f439b749}">
     <Category Name="ACDCOverview" GUID="{c8887ac6-3c60-4209-9d69-8f4c12a60044}">
@@ -1759,7 +1760,7 @@
     </Category>
     <Category Name="Environment" GUID="{624ed9c3-bdfd-41fa-96c3-7c824ea32e3d}">
       <Color Name="LightCaption">
-        <Background Type="CT_RAW" Source="FFC8C8C8" />
+        <Background Type="CT_RAW" Source="FF000000" />
       </Color>
       <Color Name="MainWindowCloudEnvironmentActive">
         <Background Type="CT_RAW" Source="FF000000" />
@@ -2223,7 +2224,7 @@
         <Background Type="CT_RAW" Source="FF000000" />
       </Color>
       <Color Name="InactiveCaption">
-        <Background Type="CT_RAW" Source="FFDCDCDC" />
+        <Background Type="CT_RAW" Source="FF000000" />
       </Color>
       <Color Name="MainWindowActiveCaption">
         <Background Type="CT_RAW" Source="FF000000" />
@@ -2240,10 +2241,10 @@
         <Background Type="CT_RAW" Source="FF000000" />
       </Color>
       <Color Name="PanelTitleBar">
-        <Background Type="CT_RAW" Source="FFDCDCDC" />
+        <Background Type="CT_RAW" Source="FF000000" />
       </Color>
       <Color Name="PanelTitleBarUnselected">
-        <Background Type="CT_RAW" Source="FFFFFFFF" />
+        <Background Type="CT_RAW" Source="FF000000" />
       </Color>
       <Color Name="ProjectDesignerBackgroundGradientBegin">
         <Background Type="CT_RAW" Source="FF000000" />
@@ -2279,10 +2280,10 @@
         <Background Type="CT_RAW" Source="FF000000" />
       </Color>
       <Color Name="TitleBarDragHandleActive">
-        <Background Type="CT_RAW" Source="FFDCDCDC" />
+        <Background Type="CT_RAW" Source="FF000000" />
       </Color>
       <Color Name="TitleBarInactive">
-        <Background Type="CT_RAW" Source="FFDCDCDC" />
+        <Background Type="CT_RAW" Source="FF000000" />
       </Color>
       <Color Name="TitleBarInactiveGradientBegin">
         <Background Type="CT_RAW" Source="FF000000" />
@@ -2334,7 +2335,7 @@
         <Background Type="CT_RAW" Source="FF6B6B6B" />
       </Color>
       <Color Name="TitleBarActive">
-        <Background Type="CT_RAW" Source="FF6B6B6B" />
+        <Background Type="CT_RAW" Source="FF000000" />
       </Color>
       <Color Name="ToolWindowFloatingFrameInactive">
         <Background Type="CT_RAW" Source="FF000000" />
@@ -3096,7 +3097,7 @@
         <Background Type="CT_RAW" Source="FF222222" />
       </Color>
       <Color Name="ActiveCaption">
-        <Background Type="CT_RAW" Source="FFDCDCDC" />
+        <Background Type="CT_RAW" Source="FF000000" />
       </Color>
       <Color Name="AutoHideTabBorder">
         <Background Type="CT_RAW" Source="FF222222" />
@@ -3972,7 +3973,7 @@
         <Background Type="CT_RAW" Source="00000000" />
       </Color>
       <Color Name="TitleBarDragHandle">
-        <Background Type="CT_RAW" Source="FFDCDCDC" />
+        <Background Type="CT_RAW" Source="FF000000" />
       </Color>
       <Color Name="ToolboxBackground">
         <Background Type="CT_RAW" Source="FF000000" />
@@ -9254,7 +9255,7 @@
         <Background Type="CT_RAW" Source="0F000000" />
       </Color>
       <Color Name="DividerStrokeColorDefault">
-        <Background Type="CT_RAW" Source="FF1C1C1C" />
+        <Background Type="CT_RAW" Source="FF222222" />
       </Color>
       <Color Name="FocusStrokeColorOuter">
         <Background Type="CT_RAW" Source="FF222222" />
@@ -9348,6 +9349,72 @@
       </Color>
       <Color Name="SystemFillColorSolidNeutralBackground">
         <Background Type="CT_RAW" Source="FF141414" />
+      </Color>
+      <Color Name="SolidBackgroundFillBase">
+        <Background Type="CT_RAW" Source="FF000000" />
+      </Color>
+      <Color Name="SolidBackgroundFillBaseAlt">
+        <Background Type="CT_RAW" Source="FF000000" />
+      </Color>
+      <Color Name="SolidBackgroundFillSecondary">
+        <Background Type="CT_RAW" Source="FF000000" />
+      </Color>
+      <Color Name="SolidBackgroundFillQuinary">
+        <Background Type="CT_RAW" Source="FF000000" />
+      </Color>
+      <Color Name="SurfaceBackgroundFillSecondary">
+        <Background Type="CT_RAW" Source="FF000000" />
+      </Color>
+      <Color Name="SurfaceBackgroundFillTertiary">
+        <Background Type="CT_RAW" Source="FF000000" />
+      </Color>
+      <Color Name="StrokeDefault">
+        <Background Type="CT_RAW" Source="FF222222" />
+      </Color>
+      <Color Name="StrokeSecondary">
+        <Background Type="CT_RAW" Source="FF1C1C1C" />
+      </Color>
+      <Color Name="StrokeTertiary">
+        <Background Type="CT_RAW" Source="FF141414" />
+      </Color>
+      <Color Name="DividerStrokeColorSecondary">
+        <Background Type="CT_RAW" Source="FF1C1C1C" />
+      </Color>
+      <Color Name="ControlFillDefault">
+        <Background Type="CT_RAW" Source="00000000" />
+      </Color>
+      <Color Name="ControlFillSecondary">
+        <Background Type="CT_RAW" Source="FF141414" />
+      </Color>
+      <Color Name="ControlFillTertiary">
+        <Background Type="CT_RAW" Source="FF0A0A0A" />
+      </Color>
+      <Color Name="ControlFillDisabled">
+        <Background Type="CT_RAW" Source="00000000" />
+      </Color>
+      <Color Name="ControlStrokeDefault">
+        <Background Type="CT_RAW" Source="FF222222" />
+      </Color>
+      <Color Name="ControlStrokeSecondary">
+        <Background Type="CT_RAW" Source="FF1C1C1C" />
+      </Color>
+      <Color Name="TabBackground">
+        <Background Type="CT_RAW" Source="FF000000" />
+      </Color>
+      <Color Name="TabBorder">
+        <Background Type="CT_RAW" Source="FF222222" />
+      </Color>
+      <Color Name="TabBackgroundSelected">
+        <Background Type="CT_RAW" Source="FF000000" />
+      </Color>
+      <Color Name="TabBorderSelected">
+        <Background Type="CT_RAW" Source="FF222222" />
+      </Color>
+      <Color Name="TabBackgroundHover">
+        <Background Type="CT_RAW" Source="FF141414" />
+      </Color>
+      <Color Name="TabBorderHover">
+        <Background Type="CT_RAW" Source="FF222222" />
       </Color>
     </Category>
     <Category Name="SQL Results - Grid" GUID="{6202ff3e-488e-4ead-92cb-be089659f8d7}">
@@ -9695,6 +9762,36 @@
         <Background Type="CT_RAW" Source="FF222222" />
       </Color>
       <Color Name="MainWindowBackground">
+        <Background Type="CT_RAW" Source="FF000000" />
+      </Color>
+      <Color Name="EnvironmentBorderInactive">
+        <Background Type="CT_RAW" Source="FF1C1C1C" />
+      </Color>
+      <Color Name="ToolWindowTabBackground">
+        <Background Type="CT_RAW" Source="FF000000" />
+      </Color>
+      <Color Name="ToolWindowTabBorder">
+        <Background Type="CT_RAW" Source="FF222222" />
+      </Color>
+      <Color Name="ToolWindowTabSelectedBackground">
+        <Background Type="CT_RAW" Source="FF000000" />
+      </Color>
+      <Color Name="ToolWindowTabSelectedBorder">
+        <Background Type="CT_RAW" Source="FF222222" />
+      </Color>
+      <Color Name="DocumentWellTabBackground">
+        <Background Type="CT_RAW" Source="FF000000" />
+      </Color>
+      <Color Name="DocumentWellTabBorder">
+        <Background Type="CT_RAW" Source="FF222222" />
+      </Color>
+      <Color Name="DocumentWellTabSelectedBackground">
+        <Background Type="CT_RAW" Source="FF000000" />
+      </Color>
+      <Color Name="DocumentWellTabSelectedBorder">
+        <Background Type="CT_RAW" Source="FF222222" />
+      </Color>
+      <Color Name="StatusBarBackgroundFillRest">
         <Background Type="CT_RAW" Source="FF000000" />
       </Color>
     </Category>

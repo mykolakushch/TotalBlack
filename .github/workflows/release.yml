@@ -54,6 +54,7 @@ jobs:
           files: TotalBlack/bin/Release/TotalBlack.vsix
 
       - name: Publish to Visual Studio Marketplace
+        continue-on-error: true
         shell: pwsh
         env:
           VS_PAT: ${{ secrets.VS_PUBLISHER_ACCESS_TOKEN }}
